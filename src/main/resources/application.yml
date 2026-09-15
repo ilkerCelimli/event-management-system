@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: event-management-system
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/eventdb}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  jwt:
+    # 32+ character secret for HS256. Override in production via env var APP_JWT_SECRET.
+    secret: ${APP_JWT_SECRET:change-me-to-a-long-random-secret-at-least-32-chars}
+    expiration-ms: 86400000   # 24 hours
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
