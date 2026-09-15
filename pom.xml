@@ -18,7 +18,7 @@
     <description>Spring Boot + PostgreSQL Event Management System</description>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>26</java.version>
     </properties>
 
     <dependencies>
